@@ -1,0 +1,144 @@
+Aiemmin olin kattonu mitä tolla saa aikaseks ja innostuin lisää... En muista laitoinko sitä ylös.
+https://www.youtube.com/watch?v=uONz0lEWft0&list=PLillGF-RfqbZMNtaOXJQiDebNXjVapWPZ
+katoin mitä pitää tehtävässä tehdä lopulta, jotta kokonaisuus tulisi selville.
+
+7.2 
+Katsoin 40 minuuttia ja asentelin samalla node.js 12, meillä oli versio 14 asennettuna. Menin vähän vaikeemman kautta säätään sitä version alentamista. Asensin nvm:n ja oli 2 eri versioo, jotka ei enää kummatkaa toiminu, sit lopult poistin kaikki ja asensin vaan version 12.
+Tiedoston ja kansioiden muokkaamista oli tähän asti. 37:57
+https://www.youtube.com/watch?v=fBNz5xF-Kx4
+Käy läpi moduleita. Events menee jotenki ohi, että mitä se tarkottaa.
+
+56:00 -> Näyttää miten serveri laitetaan.
+Nodemon on oiva työkalu, se päivittää js tiedostoon tehdyt muutokset automaattisesti, eikä tarvi käynnistellä serveriä kokoajan uusiks ite.
+npm run dev komennolla käynnistetään nyt serveri.
+
+Rupesin säätää sitä videolla olevaa serveriä. Tuli erroria joka näytti siltä että node serveri jäi pyöriin. Joten piti selvittää että:
+taskkill /f /im node.exe
+saa pois ne pyörimästä.
+Katottu video ja tehty serveri videon mukana.
+Sit se pitää laittaa Herokuun
+
+14.2 
+Jatkoin ohjeiden mukaan Herokuun laittamista. Heroku oli vähä muuttunu tai sit erilainen windowssilla ku videon macillä. Ei se haitannu.
+Toki jotain meni vikaan eikä se Herokussa näytä mitään. Tarkastan ongelmat.
+
+16.2
+Aikani mietin ja samalla opettelin Gitin ja Herokun käyttöä. Ongelma oli vaan polun muodostamis kohdassa kirjotusvirhe. Itellä isolla Public ja harjotuksessa public. Nyt se eka node.js crash course videon harjotus toimii osotteessa https://quiet-sierra-85634.herokuapp.com/.
+Rupes kiinnostelee miks node.js on nopeempi ku muut ni luin tämän:
+https://www.peerbits.com/blog/why-nodejs-fast-and-its-best-use-cases.html
+-
+Alotin MongoDB videon katselun. Lautaslinkki oli mongodb:n sivuilla piilotettu eikä samassa kohtaa ku videossa,
+https://www.mongodb.com/try/download/community
+
+22.2
+Katselin videota loppuun, käytiin läpi mongoDB shell komentoja. Sit asenneltii mongodb cloud https://cloud.mongodb.com/ sivustolla.
+Tonne cloudii komennot on ainaki eritavalla mongoshellistä ku videolla. 
+https://docs.mongodb.com/mongodb-shell/run-commands/
+use myNewDatabase
+db.myCollection.insertOne( { x: 1 } );
+
+videolla: db.createCollection('todos') ja se antaa erroria mulle ainaki mongoshellissä
+
+
+23.2
+https://www.youtube.com/watch?v=L72fhGm1tfE
+aloin katsomaan EXPRESS JS crash coursee. Tästä meillä oli jo Olli Koskimaan pitämänä. Naputtelin videon ohjeiden mukaan.
+
+18.3 katsoin illalla vähä EXPRESS JS crash
+
+19.3 loput EXPRESS JS crash videosta aamulla
+templaten teko kohdassa jotenki meni ohi, millä logiikalla se haki ne main.handlebars ja index.handlebars sieltä views/layouts kansiosta...
+Alotin Angular hommelit: https://angular.io/start
+Sit asensin lähiympäristön(local environment). Joutu päivittää node.js enne ku alko toimii.
+Tein git reporisitoryn vaikka tehny tehtäviä jo.
+https://github.com/marlandos/CT70A9140-MS
+
+20.3
+Laitoin ekan harkan githubiin, tän pitäs näyttää vaan html sivu ja joku teksti vaan
+https://github.com/marlandos/nodeJSHarkka1
+
+Angular
+https://github.com/marlandos/AngularHarkka
+ng serve --open oli se komento jolla saadaa tää heräteltyä käyntiin
+
+21.3
+https://angular.io/tutorial/toh-pt3 tästä jatkoin
+
+kesti pitkään tajuta et tää bugas heroes.component.html
+<!-- <div>
+    <label for="name">Hero name: </label>
+    <input id="name" [(ngModel)]="hero.name" placeholder="name">
+  </div> -->
+
+Add Navigation kohta tehty päivän lopuks
+
+22.3
+Jatketaan Get data from server kohdasta
+
+
+25.4
+3. videon lopussa tuli ongelmia, jonkin verran kirjotusvirheitä oli ja veteli erroria. Osa virheistä oli samoja ku videolla, osa isoja kirjaimia tai pienten korjailua. Katoin VS Codesta myös ku se sano "npm i --save-dev @types/bcryptjs" komento pitää suorittaa. Piti useemmallekki node_modulelle tehdä toi. 
+En tiä tuliko asennuksessa unohdettua jotain muutakin. Asensin tosiaa kerran ilman kaikkia dependencyjä, no tolla ne sit tuli korjattua.
+
+En ihan vielä tajua koko hommaa täysin. Node.js perusidean käsitys tuli väännettyä selkeeks ku tein toiselle kurssille opinnäytetyön kirjottamisen harjottelua jossa oli aiheesta.
+
+26.4
+Videon 4. lopussa ku koitti Postmanilla ni tuli error:
+Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/home/marutzini/Asiakirjat/NodeProjektit/meanauthapp/node_modules/passport/lib/strategies/session.js:46:41)
+    at attempt (/home/marutzini/Asiakirjat/NodeProjektit/meanauthapp/node_modules/passport/lib/middleware/authenticate.js:369:16)
+    at authenticate (/home/marutzini/Asiakirjat/NodeProjektit/meanauthapp/node_modules/passport/lib/middleware/authenticate.js:370:7)
+    at Layer.handle [as handle_request] (/home/marutzini/Asiakirjat/NodeProjektit/meanauthapp/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/marutzini/Asiakirjat/NodeProjektit/meanauthapp/node_modules/express/lib/router/index.js:323:13)
+    at /home/marutzini/Asiakirjat/NodeProjektit/meanauthapp/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/marutzini/Asiakirjat/NodeProjektit/meanauthapp/node_modules/express/lib/router/index.js:341:12)
+    at next (/home/marutzini/Asiakirjat/NodeProjektit/meanauthapp/node_modules/express/lib/router/index.js:275:10)
+    at initialize (/home/marutzini/Asiakirjat/NodeProjektit/meanauthapp/node_modules/passport/lib/middleware/initialize.js:89:5)
+    at Layer.handle [as handle_request] (/home/marutzini/Asiakirjat/NodeProjektit/meanauthapp/node_modules/express/lib/router/layer.js:95:5)
+
+errori tuli vasta ku koitta postmanilla, en nää mistää et ois videossa declared toi express-session... tää on joku uus error.
+
+VS Coden errorit lähti pois tekemällä tämän videon mukaan.
+https://www.youtube.com/watch?v=yxQ2zZBEvZ4
+
+Tämä jäi silti:
+Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+
+Ratkastu ->
+module.exports.addUser = function(newUser, callback){
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(newUser.password, salt, (err, hash) =>{
+            if (err) throw err;
+            newUser.password = hash;
+            newUser.save(callback);
+        });
+    });
+}
+
+muutokset:
+bcrypt.genSalt(10, function(err, salt) {
+
+users.js
+router.post('/register', (req, res, next) => {
+const {email, password} = req.body <- toi lisätty
+    let newUser = new User({
+        name: req.body.name,
+
+28.4
+Jouduin asentaa uusimman Angularin koska se ei vaa suostunu se vanhempi asentuu. 
+Oon korjaillu sit erroreita sen mukaan. Ainoo missä tuli errrori minkä en oo vielä korjannu oli HttpClientModulen HttpClien hommelit, vanhassa angularissa se oli vaan http pelkästään tai jotain. 
+Ne menee vähä eritavalla ku videolla nykyään. Sinänsä ihan kiinnostavaa korjailla erroreita, jos pääsee eteneen. Oon ainaki selvinny sinne 7 videon keskivaiheille, vaikka ei pitäs kai onnistua.
+
+2.5
+
+Oli ongelmia ton data.success kohdan kanssa, se piti kirjottaa data['success']
+
+      this.authService.registerUSer(user).subscribe(data =>{
+       
+        if(data['success']){
+
+---------------
+
+nyt on ongelma et selaimen konsoli sanoo et http://localhost:4200/register not found ku painaa submit.
+Ratkaisu: Tajuta, että tämä ongelma oli itseaiheutettu. Eli backend ei ollu päällä ja pyörimässä portissa 3000 vaan olin laittanu sinne jotai omiani...
+ 
