@@ -23,3 +23,5 @@ module.exports = function(passport){
         });
     }));
 }
+// User.getUserById(jwt_payload.data._id,
+//  User.getUserById(jwt_payload.username
