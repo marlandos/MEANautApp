@@ -59,6 +59,7 @@ require('./config/passport')(passport);
 app.use('/users', users);
 
 app.get('/', (req, res) => {
+    res.cookie('cookieName', 'cookieValue', { sameSite: 'none', secure: true})
     res.send('invalid endpoint');
 });
 
